@@ -1,0 +1,124 @@
+ Software Requirements Specification (SRS)
+
+Online Student Management System
+
+ 1. Introduction
+
+  1.1 Purpose
+The Online Student Management System aims to simplify the management of student records for educational institutions. It provides functionalities for adding, viewing, updating, and managing student information efficiently in a centralized platform.
+
+  1.2 Scope
+This system is designed for small to medium-sized institutions to maintain and manage student details. The system will allow administrators to add, update, and view student records through a user-friendly interface while maintaining data integrity.
+
+  1.3 Definitions, Acronyms, and Abbreviations
+- JSP: JavaServer Pages
+- JDBC: Java Database Connectivity
+- CRUD: Create, Read, Update, Delete
+- UI: User Interface
+
+  1.4 References
+- MySQL Documentation
+- Java SE Development Kit Documentation
+- Apache Tomcat Documentation
+
+ 2. Overall Description
+
+  2.1 Product Perspective
+The system will replace manual processes and spreadsheets by providing a digital solution. It will be accessible via web browsers and require minimal training for users.
+
+  2.2 Product Features
+- Add new student records with fields like name, age, major, and year.
+- View all student records in a tabular format with options to edit or delete entries.
+- Update or delete existing student records with confirmation dialogs.
+- Maintain data consistency and prevent duplicate entries.
+
+  2.3 User Classes and Characteristics
+- Administrators: Responsible for managing student records.
+- Students: May access their own records (future enhancement).
+
+  2.4 Operating Environment
+- Server: Apache Tomcat 9.0 or later
+- Database: MySQL 5.7 or later
+- Client: Modern web browsers (e.g., Chrome, Firefox)
+
+  2.5 Assumptions and Dependencies
+- Users have basic knowledge of web applications.
+- Database server and application server are set up and running.
+
+ 3. Functional Requirements
+
+  3.1 Add Student Record
+- Input: Name, Age, Major, Year
+- Process: Validate and insert data into the database.
+- Output: Confirmation of record addition.
+
+  3.2 View All Students
+- Input: None
+- Process: Retrieve all student records from the database.
+- Output: Display records in a table with edit and delete options.
+
+  3.3 Update Student Record
+- Input: Student ID, Updated Fields
+- Process: Validate and update the record in the database via an edit.jsp page.
+- Output: Confirmation of record update.
+
+  3.4 Delete Student Record
+- Input: Student ID
+- Process: Remove the record from the database with user confirmation via a delete.jsp page.
+- Output: Confirmation of record deletion.
+
+ 4. Non-Functional Requirements
+
+  4.1 Performance Requirements
+- The system should handle up to 100 concurrent users.
+- Operations (add/view/update/delete) should execute within 2 seconds.
+
+  4.2 Security Requirements
+- User credentials and sensitive data should be securely stored.
+- Input validation to prevent SQL injection and other vulnerabilities.
+
+  4.3 Usability Requirements
+- Intuitive and straightforward user interface.
+- Provide error messages for invalid inputs.
+
+ 5. System Design Constraints
+- The system must use Java and JSP for backend processing.
+- MySQL must be the database for data storage.
+
+ 6. Testing
+
+  6.1 Testing Overview
+The project was rigorously tested to ensure functionality, performance, and security. The following tests were conducted:
+
+- Unit Testing: Each module, including add, view, update, and delete functionalities, was tested independently to ensure correctness.
+- Integration Testing: Verified the seamless interaction between JSP pages, the backend database, and the application server.
+- Functional Testing: Ensured all CRUD operations work as expected.
+- Performance Testing: Tested system responsiveness with multiple concurrent users and ensured operations completed within acceptable timeframes.
+- User Acceptance Testing: Simulated real-world usage scenarios to validate usability and user-friendliness.
+- Security Testing: Checked input validation to prevent SQL injection and unauthorized access.
+
+  6.2 Testing Tools
+- Manual testing was performed for functional validation.
+- Database operations were validated using MySQL Workbench.
+- Browser Developer Tools were used to debug and test the UI.
+
+  6.3 Testing Results
+- All modules passed the defined test cases.
+- The system maintained data integrity under various scenarios.
+- No major performance or security issues were identified.
+
+ 7. Future Enhancements
+- Add student search functionality.
+- Enable role-based access (e.g., students accessing their records).
+- Integrate a reporting module to generate student analytics.
+
+ 8. Appendices
+
+  8.1 Glossary
+- SQL Injection: A code injection technique that exploits a vulnerability in a database layer.
+- CRUD Operations: Basic operations to Create, Read, Update, and Delete records.
+
+  8.2 References
+- MySQL Documentation: [https://dev.mysql.com/doc/](https://dev.mysql.com/doc/)
+- Java SE Development Kit: [https://www.oracle.com/java/technologies/javase-downloads.html](https://www.oracle.com/java/technologies/javase-downloads.html)
+- Apache Tomcat: [http://tomcat.apache.org/](http://tomcat.apache.org/)
